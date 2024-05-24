@@ -4,11 +4,17 @@
 
 [flutter_translate | Flutter package](https://pub.dev/packages/flutter_translate)
 
+Firstly, let’s import the `flutter_translate` package.
+
 ```bash
 flutter pub add flutter_translate
 ```
 
-Then, you’ll need to register the built-in `flutter_localizations` package in your `pubspec.yaml` file.
+This package works with `flutter_localizations` .
+
+Even though `flutter_localizations` is bundled with the Flutter SDK, it's not automatically included in your Flutter project by default. You need to explicitly declare it as a dependency in your `pubspec.yaml` file to use its functionalities in your project.
+
+So you need to add the fllowing lines to your `pubspec.yaml` file.
 
 ```yaml
 dependencies:
