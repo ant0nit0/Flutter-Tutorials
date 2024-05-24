@@ -1,0 +1,12 @@
+{
+    "demo": {
+        "title": "Exemple de titre",
+        "created": "Créé par {name}",
+        "plural": {
+            "zero": "Vous n'avez pas encore appuyé sur le bouton.",
+            "one": "Vous n'avez appuyé sur le bouton qu'une seule fois.",
+            "two": "Vous n'avez appuyé sur le bouton que deux fois.",
+            "other": "Vous avez appuyé sur le bouton {{value}} fois."
+        }
+    }
+}

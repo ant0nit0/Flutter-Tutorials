@@ -1,0 +1,12 @@
+{
+    "demo": {
+        "title": "Title example",
+        "created": "Created by {name}",
+        "plural": {
+            "zero": "You haven't pushed the button yet.",
+            "one": "You have pushed the button only once.",
+            "two": "You have pushed the button just twice.",
+            "other": "You have pushed the button {{value}} times."
+        }
+    }
+}
