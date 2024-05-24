@@ -11,12 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Routing app',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const FirstScreen(),
       initialRoute: Routes.firstScreen,
       onGenerateRoute: RouteGenerator.generateRoute,
       debugShowCheckedModeBanner: false,
@@ -41,7 +40,9 @@ class FirstScreen extends StatelessWidget {
         onPressed: () => navigatorKey.currentState!.pushReplacementNamed(
           Routes.secondScreen,
           arguments: const SecondScreenArgs(
-              'This message comes from the first screen'),
+            title: 'Hello from the first screen',
+            message: 'This message comes from the first screen too',
+          ),
         ),
         tooltip: 'Go to second page',
         child: const Icon(Icons.arrow_forward_ios_rounded),
@@ -63,7 +64,13 @@ class SecondScreen extends StatelessWidget {
         title: const Text('Second Screen'),
       ),
       body: Center(
-        child: Text(args.message),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(args.title),
+            Text(args.message),
+          ],
+        ),
       ),
       backgroundColor: Colors.greenAccent,
       floatingActionButton: FloatingActionButton(
@@ -80,7 +87,11 @@ class SecondScreen extends StatelessWidget {
 /// in order to improve maintainability and readability.
 /// This way, we can easily add or remove parameters without having to update the router
 class SecondScreenArgs {
+  final String title;
   final String message;
 
-  const SecondScreenArgs(this.message);
+  const SecondScreenArgs({
+    required this.title,
+    required this.message,
+  });
 }
